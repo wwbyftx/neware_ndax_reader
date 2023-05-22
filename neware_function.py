@@ -1,12 +1,3 @@
-
-# multi = struct.unpack("i",byte3[94:98])  #4
-# [Y, M, D, h, m, s] = struct.unpack('<HBBBBB', byte3[87:94]) # OK 7
-# [Charge_energy, DChgEnergy] = struct.unpack('<qq', byte3[71:87]) # OK 16
-# [ChgCap,DChgCap] = struct.unpack('<q', byte3[63:71]) # OK 16
-# [Voltage,current] = struct.unpack('<i', byte3[43:51]) # OK
-# [time] = struct.unpack('Q', byte3[35:43]) # OK
-# [Index, Cycle] = struct.unpack('<IB', byte3[24:29]) #OK
-# [Range] = struct.unpack('i',byte3[0:4]) #OK
 import struct
 from datetime import datetime
 
@@ -22,11 +13,6 @@ def byte_to_list(bytes):
     [Charge_energy, Discharge_energy] = struct.unpack('<qq', bytes[59:75])
     [Y, M, D, h, m, s] = struct.unpack('<HBBBBB', bytes[75:82])
     [Range] = struct.unpack("i", bytes[82:86])
-
-
-
-
-
 
 
     state_dict = {
